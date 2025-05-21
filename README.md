@@ -1,5 +1,7 @@
 # EN - english version
 
+This is a django-vue integration example, backend folder for django and frontend folder for vue.
+
 ## Useful commands
 
 ### pip-tools as package manager
