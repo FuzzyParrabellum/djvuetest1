@@ -1,2 +1,5 @@
 django
 pip-tools
+django-environ
+psycopg2-binary
+pillow

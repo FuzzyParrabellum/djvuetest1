@@ -16,9 +16,15 @@ colorama==0.4.6
     #   click
 django==5.2.1
     # via -r requirements/base_requirements.in
+django-environ==0.12.0
+    # via -r requirements/base_requirements.in
 packaging==25.0
     # via build
+pillow==11.2.1
+    # via -r requirements/base_requirements.in
 pip-tools==7.4.1
+    # via -r requirements/base_requirements.in
+psycopg2-binary==2.9.10
     # via -r requirements/base_requirements.in
 pyproject-hooks==1.2.0
     # via
