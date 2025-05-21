@@ -48,7 +48,7 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-
+    'graphene_django',
 ]
 
 LOCAL_APPS = [
@@ -122,6 +122,9 @@ else :
         }
     }
 
+GRAPHENE = {
+  "SCHEMA": "coreapps.blog.schema.schema",
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
