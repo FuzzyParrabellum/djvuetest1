@@ -1,6 +1,7 @@
 # EN - english version
 
 This is a django-vue integration example, backend folder for django and frontend folder for vue.
+It uses the django-vue basic tutorial from https://realpython.com/python-django-blog/ as an inspiration for the models and the features.
 
 ## Useful commands
 
