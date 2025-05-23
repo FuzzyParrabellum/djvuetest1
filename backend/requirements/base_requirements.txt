@@ -5,7 +5,9 @@
 #    pip-compile --output-file=requirements/base_requirements.txt requirements/base_requirements.in
 #
 asgiref==3.8.1
-    # via django
+    # via
+    #   django
+    #   django-cors-headers
 build==1.2.2.post1
     # via pip-tools
 click==8.2.1
@@ -17,7 +19,10 @@ colorama==0.4.6
 django==5.2.1
     # via
     #   -r requirements/base_requirements.in
+    #   django-cors-headers
     #   graphene-django
+django-cors-headers==4.7.0
+    # via -r requirements/base_requirements.in
 django-environ==0.12.0
     # via -r requirements/base_requirements.in
 graphene==3.4.3
