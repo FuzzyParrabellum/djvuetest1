@@ -3,8 +3,17 @@
 import { createApp, provide, h } from 'vue'
 import App from './App.vue'
 import router from './router'
-import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
+import { ApolloClient, createHttpLink, InMemoryCache, from } from '@apollo/client/core'
 import { DefaultApolloClient } from '@vue/apollo-composable'
+import { onError } from '@apollo/client/link/error'
+
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors)
+    graphQLErrors.forEach(({ message, locations, path }) =>
+      console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`),
+    )
+  if (networkError) console.error(`[Network error]: ${networkError}`)
+})
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:8000/graphql/',
@@ -15,7 +24,7 @@ const cache = new InMemoryCache()
 // if the data hasn’t changed.
 
 const apolloClient = new ApolloClient({
-  link: httpLink,
+  link: from([errorLink, httpLink]),
   cache,
 })
 
