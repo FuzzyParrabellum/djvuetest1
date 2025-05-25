@@ -23,8 +23,6 @@ const { result, loading, error } = useQuery(gql`
         author {
           user {
             name
-            firstName
-            lastName
           }
         }
         tags {

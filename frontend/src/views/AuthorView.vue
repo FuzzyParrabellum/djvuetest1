@@ -9,13 +9,11 @@ const username = route.params.username
 const { result, loading, error } = useQuery(gql`
   query {
     authorByUsername(
-      name: "${name}"
+      name: "${username}"
     ) {
         website
         bio
         user {
-          firstName
-          lastName
           name
         }
         postSet {
