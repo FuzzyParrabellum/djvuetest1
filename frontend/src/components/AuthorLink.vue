@@ -15,7 +15,7 @@ const displayName = computed(() => {
 </script>
 
 <template>
-  <RouterLink :to="{ name: 'author', params: { username: author.user.name } }">
+  <RouterLink :to="{ name: 'author', params: { name: author.user.name } }">
     {{ displayName }}
   </RouterLink>
 </template>

@@ -13,7 +13,7 @@ const router = createRouter({
       component: AllPostsView,
     },
     {
-      path: '/author/:username',
+      path: '/author/:name',
       name: 'author',
       component: AuthorView,
     },

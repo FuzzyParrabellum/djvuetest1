@@ -34,8 +34,8 @@ class CustomUserManager(UserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     email= models.EmailField(unique=True)
-    name= models.CharField(max_length=255, blank=True, null=True)
-    avatar = models.ImageField(upload_to='uploads/avatars')
+    name= models.CharField(max_length=255)
+    avatar = models.ImageField(upload_to='uploads/avatars', blank=True, null=True)
 
     # important, si veut utiliser qq chose comme l'email verification il
     # faudrait mettre le param ci-dessous à default=False

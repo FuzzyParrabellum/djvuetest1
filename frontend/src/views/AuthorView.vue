@@ -5,11 +5,11 @@ import { useQuery } from '@vue/apollo-composable'
 import gql from 'graphql-tag'
 
 const route = useRoute()
-const username = route.params.username
+const name = route.params.name
 const { result, loading, error } = useQuery(gql`
   query {
     authorByUsername(
-      name: "${username}"
+      name: "${name}"
     ) {
         website
         bio
